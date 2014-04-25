@@ -234,9 +234,10 @@ class Tutorial(object):
     cmd = ' '
     if python == False:
       cmd = base.StripMargin("""
-          |express job --libjars "${MUSIC_EXPRESS_HOME}/lib/*" \\
+          |express job \\
           |    ${EXPRESS_MUSIC_JAR} \\
           |    org.kiji.express.music.SongMetadataImporter \\
+          |    --libjars "${MUSIC_EXPRESS_HOME}/lib/*" \\
           |    --input ${HDFS_BASE}/express-tutorial/song-metadata.json \\
           |    --table-uri ${KIJI}/songs --hdfs
           """)
